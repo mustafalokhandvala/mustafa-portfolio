@@ -30,7 +30,7 @@ const Header = ({ personalInfo, darkMode, toggleTheme }) => {
         }`}
     >
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <a href="/" className="flex items-center gap-2">
+        <a href={process.env.PUBLIC_URL || '/'} className="flex items-center gap-2">
           <img src={logo} alt={personalInfo.name} className="h-10 w-auto" />
         </a>
 
