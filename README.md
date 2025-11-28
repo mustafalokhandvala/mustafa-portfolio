@@ -1,7 +1,5 @@
 # Mustafa Lokhandwala | Portfolio Website
 
-![Portfolio Logo](src/assets/logo.png)
-
 A modern, responsive, and interactive portfolio website built with **React**, **Tailwind CSS**, and **Framer Motion**. This project showcases my skills, projects, and experience with a premium, glassmorphism-inspired design.
 
 ## 🚀 Live Demo

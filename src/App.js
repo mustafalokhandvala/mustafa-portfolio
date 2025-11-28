@@ -1,13 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense, lazy } from 'react';
 import { FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import Header from './components/Header';
-import Contact from './components/Contact';
-import Projects from './components/Projects';
-import Skills from './components/Skills';
 import BackgroundAnimation from './components/BackgroundAnimation';
+import Loading from './components/Loading';
 import { personalInfo, skills, portfolioProjects } from './data';
-
 import profileImage from './assets/profile.png';
+
+const Contact = lazy(() => import('./components/Contact'));
+const Projects = lazy(() => import('./components/Projects'));
+const Skills = lazy(() => import('./components/Skills'));
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
@@ -118,11 +119,17 @@ function App() {
           </div>
         </section>
 
-        <Skills skills={skills} />
+        <Suspense fallback={<Loading />}>
+          <Skills skills={skills} />
+        </Suspense>
 
-        <Projects projects={portfolioProjects} />
+        <Suspense fallback={<Loading />}>
+          <Projects projects={portfolioProjects} />
+        </Suspense>
 
-        <Contact personalInfo={personalInfo} />
+        <Suspense fallback={<Loading />}>
+          <Contact personalInfo={personalInfo} />
+        </Suspense>
       </main>
 
       <footer className="py-8 text-center text-light-muted dark:text-dark-muted border-t border-gray-200 dark:border-gray-800 mt-20">

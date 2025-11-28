@@ -47,7 +47,7 @@ const Header = ({ personalInfo, darkMode, toggleTheme }) => {
 
           <div className="flex items-center space-x-4 border-l border-gray-300 dark:border-gray-700 pl-6">
             <a
-              href="/resume.pdf"
+              href={`${process.env.PUBLIC_URL}/resume.pdf`}
               download
               className="px-5 py-2 bg-primary-600 hover:bg-primary-700 text-white text-sm font-medium rounded-full transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
             >
@@ -110,7 +110,7 @@ const Header = ({ personalInfo, darkMode, toggleTheme }) => {
                 </a>
               ))}
               <a
-                href="/resume.pdf"
+                href={`${process.env.PUBLIC_URL}/resume.pdf`}
                 download
                 className="text-primary-600 dark:text-primary-400 font-medium"
               >
