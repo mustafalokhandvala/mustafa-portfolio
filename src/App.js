@@ -9,6 +9,8 @@ import profileImage from './assets/profile.png';
 const Contact = lazy(() => import('./components/Contact'));
 const Projects = lazy(() => import('./components/Projects'));
 const Skills = lazy(() => import('./components/Skills'));
+const Experience = lazy(() => import('./components/Experience'));
+const Companies = lazy(() => import('./components/Companies'));
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
@@ -121,6 +123,14 @@ function App() {
 
         <Suspense fallback={<Loading />}>
           <Skills skills={skills} />
+        </Suspense>
+
+        <Suspense fallback={<Loading />}>
+          <Companies />
+        </Suspense>
+
+        <Suspense fallback={<Loading />}>
+          <Experience />
         </Suspense>
 
         <Suspense fallback={<Loading />}>

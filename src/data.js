@@ -90,6 +90,30 @@ export const achievements = [
   "Achieved 97% test coverage in key Flutter modules ensuring robust deployments."
 ];
 
+export const companies = [
+  {
+    name: "Tech Mahindra",
+    role: "Senior Software Engineer",
+    duration: "Nov 2022 – June 2025",
+    description: "Leading Flutter development for enterprise clients including PepsiCo and DigiPhoto Entertainment",
+    icon: "TM"
+  },
+  {
+    name: "Peerbits Solutions",
+    role: "Software Engineer",
+    duration: "Feb 2020 – Nov 2022",
+    description: "Developed fintech and digital library applications with advanced state management",
+    icon: "PS"
+  },
+  {
+    name: "Serpent Consulting",
+    role: "Android Developer",
+    duration: "Dec 2016 – Jan 2020",
+    description: "Built field service management solutions with real-time order processing",
+    icon: "SC"
+  }
+];
+
 export const portfolioProjects = [
   {
     name: "PepsiCo GRA (Grower Relationship App)",
