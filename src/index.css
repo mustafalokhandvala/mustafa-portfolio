@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@400;700&family=Space+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,16 +7,46 @@
 
 @layer base {
   body {
-    @apply bg-light-bg text-light-text dark:bg-dark-bg dark:text-dark-text font-sans antialiased transition-colors duration-300 overflow-x-hidden;
+    @apply bg-background text-on-surface font-body-md overflow-x-hidden selection:bg-primary selection:text-black;
+    background-color: #080C10;
+    background-image: linear-gradient(to right, rgba(133, 147, 152, 0.05) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(133, 147, 152, 0.05) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+}
+
+@layer components {
+  .level-1 {
+    @apply bg-[#0D1117] border border-outline-variant;
+  }
+  
+  .level-2 {
+    @apply bg-[#141B24] border border-primary;
+    box-shadow: 0 0 4px theme('colors.primary');
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @apply font-heading font-bold tracking-tight;
+  .btn-primary {
+    @apply bg-primary text-black font-label-caps uppercase text-[12px] tracking-widest px-6 py-3 rounded-none;
+    box-shadow: 0 0 10px rgba(168, 232, 255, 0.5);
+    transition: all 0.2s;
+  }
+
+  .btn-secondary {
+    @apply bg-transparent text-primary border border-primary font-label-caps uppercase text-[12px] tracking-widest px-6 py-3 rounded-none;
+    transition: all 0.2s;
+  }
+
+  .btn-primary:hover, .btn-secondary:hover {
+    @apply bg-[#141B24] text-primary border border-primary;
+    box-shadow: 0 0 15px rgba(168, 232, 255, 0.8);
+  }
+
+  .chip {
+    @apply border border-outline-variant px-2 py-1 font-label-sm text-[10px] text-on-surface-variant;
+  }
+
+  .scroll-progress {
+    @apply fixed top-0 left-0 h-[2px] bg-primary z-[100];
   }
 }
 
@@ -25,13 +56,13 @@
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-light-bg dark:bg-dark-bg;
+  @apply bg-background;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-gray-300 dark:bg-gray-700 rounded-full;
+  @apply bg-surface-container-highest rounded-none;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-gray-400 dark:bg-gray-600;
+  @apply bg-outline-variant;
 }
